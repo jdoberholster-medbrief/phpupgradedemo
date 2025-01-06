@@ -43,6 +43,7 @@ final class TagFactory extends ModelFactory
         ];
     }
 
+    #[\Override]
     protected function initialize(): self
     {
         // see https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#initialization

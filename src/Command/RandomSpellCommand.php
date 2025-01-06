@@ -13,12 +13,9 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 class RandomSpellCommand extends Command
 {
     protected static $defaultName = 'app:random-spell';
-    private $logger;
 
-    public function __construct(LoggerInterface $logger)
+    public function __construct(private readonly LoggerInterface $logger)
     {
-        $this->logger = $logger;
-
         parent::__construct();
     }
 

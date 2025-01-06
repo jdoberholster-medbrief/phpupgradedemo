@@ -36,7 +36,7 @@ class QuestionTag
     /**
      * @ORM\Column(type="datetime_immutable")
      */
-    private $taggedAt;
+    private \DateTimeImmutable $taggedAt;
 
     public function __construct()
     {

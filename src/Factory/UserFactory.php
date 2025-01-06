@@ -29,13 +29,9 @@ use Zenstruck\Foundry\RepositoryProxy;
  */
 final class UserFactory extends ModelFactory
 {
-    private UserPasswordHasherInterface $passwordHasher;
-
-    public function __construct(UserPasswordHasherInterface $passwordHasher)
+    public function __construct(private readonly UserPasswordHasherInterface $passwordHasher)
     {
         parent::__construct();
-
-        $this->passwordHasher = $passwordHasher;
     }
 
     protected function getDefaults(): array
@@ -48,6 +44,7 @@ final class UserFactory extends ModelFactory
         ];
     }
 
+    #[\Override]
     protected function initialize(): self
     {
         // see https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#initialization

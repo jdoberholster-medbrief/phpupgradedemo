@@ -16,13 +16,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class QuestionController extends AbstractController
 {
-    private $logger;
-    private $isDebug;
-
-    public function __construct(LoggerInterface $logger, bool $isDebug)
+    public function __construct(private readonly LoggerInterface $logger, private readonly bool $isDebug)
     {
-        $this->logger = $logger;
-        $this->isDebug = $isDebug;
     }
 
     /**
